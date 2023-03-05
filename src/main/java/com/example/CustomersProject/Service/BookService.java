@@ -1,11 +1,11 @@
 package com.example.CustomersProject.Service;
 
 import com.example.CustomersProject.Domain.Book;
-import com.example.CustomersProject.Domain.Customer;
 import com.example.CustomersProject.Repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -30,9 +30,8 @@ public class BookService {
         return bookRepository.findById(id).orElse(null);
     }
 
-    @Transactional
-    public Book saveBook(Book book) throws IllegalArgumentException{
-
+   @Transactional
+    public Book saveBook(Book book){
         return bookRepository.save(book);
     }
 

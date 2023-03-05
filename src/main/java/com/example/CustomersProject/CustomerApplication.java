@@ -39,10 +39,11 @@ public class CustomerApplication implements CommandLineRunner {
 							Customer.builder().fullName("Customer 2").emailAddress("customer2@gmail.com").address("Customer Address Two").age(28).build(),
 							Customer.builder().fullName("Customer 3").emailAddress("customer3@gmail.com").address("Customer Address Three").age(32).build()));
 			if (bookService.getBooks().isEmpty()) {
+				bookService.saveBook(Book.builder().title("The Hobbit").genre("Adventure").releaseYear(2012).review(3).build());
 				bookService.saveBook(Book.builder().genre("Action").title("Harry potter").releaseYear(2000).review(4).build());
-			}
-			if (bookService.getBooks().isEmpty()) {
-				bookService.saveBook(Book.builder().genre("Horror").title("Scream").releaseYear(2022).review(3).build());
+
+
+
 			}
 
 		}

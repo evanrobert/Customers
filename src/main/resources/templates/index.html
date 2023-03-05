@@ -49,6 +49,8 @@
                    th:href="@{'/books/assign/' + ${customer.id}}"></a>
                 <a th:text="${(customer.book != null) ? 'Remove Book' : ''}"
                    th:href="${(customer.book != null) ? '/remove/' + customer.book.getId() : ''}"></a>
+
+
             </td>
         </tr>
         </tbody>

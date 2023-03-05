@@ -25,7 +25,7 @@ public class BookController {
     @GetMapping("/books")
     public String viewMainPage(Model model){
         final List<Book> bookList = bookService.getBooks();
-        model.addAttribute("booklist",bookList);
+        model.addAttribute("bookList",bookList);
         return "books";
 
     }
@@ -57,7 +57,6 @@ public class BookController {
     public String assignBook(@PathVariable(name = "id") Long id, Model model) {
        Customer customer = customerService.getCustomer(id);
         List<Book> bookList = bookService.findAllAvalibleBooks();
-
         model.addAttribute("customer", customer);
         model.addAttribute("bookList", bookList);
         return "assign-book";
@@ -69,8 +68,7 @@ public class BookController {
         bookService.saveBook(book);
         return "redirect:/";
     }
-
-
-
-
 }
+
+
+

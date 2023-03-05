@@ -15,12 +15,6 @@
     <table border="1" cellpadding="10">
         <thead>
         <tr>
-            <!--
-            You are creating a table here, where the header will be the Customer
-            details and then the other rows will be filled by the data that
-            you send back in the Model object.
-            -->
-
             <th>Title</th>
             <th>Genre</th>
             <th>ReleaseYear</th>
@@ -29,23 +23,14 @@
 
         </tr>
         </thead>
-        <!--
-         Now that your headers are defined, you can reference the key-value
-         pair "customerList" that you added to the model above.
-         Thymeleaf will loop over each customer and extract the attributes to match
-         your column names.
-        -->
+
         <tbody>
-        <tr th:each="book : ${bookList}">
-            <td th:text="${book.title">title</td>
-            <td th:text="${book.genre}">genre</td>
-            <td th:text="${book.releaseYear}">releaseYear</td>
-            <td th:text="${book.review}">review</td>
-            <td th:text="${book.customer != null} ? ${book.customer.first_name}"></td>
-            <td th:text="${book.customer.first_name}"></td>
-            <td>
-
-
+        <tr th:each="book: ${bookList}">
+            <td th:text="${book.title}">Title</td>
+            <td th:text="${book.genre}">Genre</td>
+            <td th:text="${book.releaseYear}">ReleaseYear</td>
+            <td th:text="${book.review}">Review</td>
+            <td th:text="${book.customer != null} ? ${book.customer.fullName}"></td>
         </tr>
         </tbody>
     </table>
